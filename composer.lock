@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c80f79390befd823e689757f7d11fd9",
+    "content-hash": "51cf7fe4552dc8ad85e4f1c8e5751a6a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -468,30 +468,30 @@
         },
         {
             "name": "jenssegers/mongodb",
-            "version": "v3.5.3",
+            "version": "v3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-mongodb.git",
-                "reference": "01ac069cf88a2d1b2749cf3a2df45496b753d11b"
+                "reference": "069b233b703c5ea763f036859bb36cb6293e1a26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/01ac069cf88a2d1b2749cf3a2df45496b753d11b",
-                "reference": "01ac069cf88a2d1b2749cf3a2df45496b753d11b",
+                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/069b233b703c5ea763f036859bb36cb6293e1a26",
+                "reference": "069b233b703c5ea763f036859bb36cb6293e1a26",
                 "shasum": ""
             },
             "require": {
-                "illuminate/container": "^5.8",
-                "illuminate/database": "^5.8",
-                "illuminate/events": "^5.8",
-                "illuminate/support": "^5.8",
+                "illuminate/container": "^5.8|^6.0",
+                "illuminate/database": "^5.8|^6.0",
+                "illuminate/events": "^5.8|^6.0",
+                "illuminate/support": "^5.8|^6.0",
                 "mongodb/mongodb": "^1.4"
             },
             "require-dev": {
                 "doctrine/dbal": "^2.5",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^3.1",
-                "phpunit/phpunit": "^6.0|^7.0",
+                "orchestra/testbench": "^3.1|^4.0",
+                "phpunit/phpunit": "^6.0|^7.0|^8.0",
                 "satooshi/php-coveralls": "^2.0"
             },
             "suggest": {
@@ -533,7 +533,7 @@
                 "mongo",
                 "mongodb"
             ],
-            "time": "2019-08-21T07:49:07+00:00"
+            "time": "2019-09-08T08:20:21+00:00"
         },
         {
             "name": "laravel/framework",

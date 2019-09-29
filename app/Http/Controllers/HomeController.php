@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -22,12 +22,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $role = Auth::user()->role;
-        $postList = []; // todo
-        return view('postList')
-            ->with('posts', $postList)
-            ->with("role", $role);
+        $role = 'visitor';
+        if (!empty(Auth::user())) {
+            $role = Auth::user()->role;
+        }
+        return view('postList')->with("role", $role);
     }
 }
