@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="container">
-                <img style="width: 100%;height: 70%; margin: 30px 0 0 0;"
+                <img style="width: 100%; margin: 30px 0 0 0;"
                      src="https://practicedock.com/wp-content/uploads/2018/03/blog-767x423.jpg">
             </div>
             <router-view>
