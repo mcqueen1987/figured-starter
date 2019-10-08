@@ -91,7 +91,6 @@ class BlogController extends Controller
         $post->content = $data['content'];
         $post->save();
         return response()->json($post->cast(), 200);
-
     }
 
     /**

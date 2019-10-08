@@ -26,7 +26,6 @@
             <button type="button" class="btn">
                 <router-link :to="'/'" style="color:#999">Cancel</router-link>
             </button>
-
         </div>
     </div>
 </template>
@@ -43,17 +42,17 @@
             };
         },
         beforeMount() {
-            this.initData();
+            this.getPost();
         },
         methods: {
-            initData() {
-                this.$http.get('/api/blog/' + this.$route.params.id)
-                    .then(function (response) {
-                        this.title = response.data.title;
-                        this.body = response.data.content;
-                    }, function (error) {
-                        console.log(error.statusText);
-                    });
+            getPost() {
+                let post = this.$store.state.blogs.blogs.filter(p => p.id === this.$route.params.id);
+                if (post[0]) {
+                    this.title = post[0].title;
+                    this.body = post[0].content;
+                } else {
+                    console.log("can not get post from store: " + this.$route.params.id);
+                }
             },
             updatePost(e) {
                 e.preventDefault();
@@ -63,11 +62,11 @@
                 this.isCreatingPost = true;
                 const data = {
                     title: this.title,
-                    content: this.body
+                    content: this.body,
+                    id: this.$route.params.id
                 };
-                this.$http.patch('/api/blog/' + this.$route.params.id, data)
-                    .then(
-                        () => {
+                this.$store.dispatch('blogs/updatePost', {'data': data})
+                    .then(() => {
                             this.status = true;
                             this.showNotification('Post Successfully Updated');
                             this.isCreatingPost = false;

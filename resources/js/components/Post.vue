@@ -1,10 +1,8 @@
 <template>
     <article class="col-sm-12">
         <h1>{{ post.title }}</h1>
-        <p>{{ post.body }}</p>
-
+        <p>{{ post.content }}</p>
         <router-link :to="'/'" style="color:#666"> &lt;&nbsp;&nbsp;Back</router-link>
-
     </article>
 </template>
 
@@ -17,17 +15,13 @@
             }
         },
         beforeMount() {
-            this.initData();
+            this.getPost(this.$route.params.id);
         },
         methods: {
-            initData() {
-                this.$http.get('/api/blog/' + this.$route.params.id)
-                    .then(function (response) {
-                        this.post = response.data;
-                    }, function (error) {
-                        console.log(error.statusText);
-                    });
-            },
+            async getPost(id) {
+                let ret = this.$store.state.blogs.blogs.filter(p => p.id === id);
+                this.post = Object.assign({}, this.post, [...ret][0]); // ??
+            }
         }
     }
 </script>

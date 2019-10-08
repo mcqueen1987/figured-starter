@@ -51,15 +51,16 @@
                     title: this.title,
                     content: this.body
                 };
-                this.$http.post('/api/blog', data)
-                    .then(() => {
-                            this.title = this.body = '';
-                            this.status = true;
-                            this.isCreatingPost = false;
-                            this.showNotification('Post Successfully Created');
-                        },
-                        error => console.log(error)
-                    );
+                let that = this;
+                this.$store.dispatch('blogs/newPost', {'data': data})
+                    .then(function () {
+                        that.title = that.body = '';
+                        that.status = true;
+                        that.isCreatingPost = false;
+                        that.showNotification('Post Successfully Created');
+                    }, function (error) {
+                        console.log(error.statusText);
+                    });
             },
             validateForm() {
                 if (!this.title) {
@@ -80,6 +81,6 @@
                     this.status_msg = '';
                 }, 3000);
             }
-        },
+        }
     };
 </script>

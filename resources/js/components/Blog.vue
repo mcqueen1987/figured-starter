@@ -5,20 +5,28 @@
             {{ statusMsg }}
         </div>
         <div class="row">
+            latestBlogsCount: {{ this.$store.getters['blogs/getBlogsCount'] }}
+            <hr>
+            latestBlogs: {{ this.$store.getters['blogs/getAllBlogs'] }}
+            <hr>
+            <div onclick="">
+                <button @click='decrement'>-</button>
+                counting : {{ this.$store.state.blogs.counting }}
+                <button @click='incrementBy'>+</button>
+            </div>
             <div class="col-sm-12">
-                <div class="row" >
+                <div class="row">
                     <router-link v-if="role == 'admin'" :to="'/create'" class="btn btn-primary"> +
                         Create New Blog
                     </router-link>
                 </div>
-
                 <paginate
-                        name="blogs"
-                        :list="posts"
+                        name="pagination"
+                        :list="this.$store.state.blogs.blogs"
                         :per="5"
                         tag="div"
                 >
-                    <section v-for="blog in paginated('blogs')" style="margin-top: 36px">
+                    <section v-for="blog in paginated('pagination')" style="margin-top: 36px">
                         <h2>{{ blog.title }}</h2>
                         <div>
                             <router-link :to="'/post/' + blog.id" style="margin-right:48px">Read more</router-link>
@@ -34,7 +42,7 @@
                 </paginate>
 
                 <paginate-links
-                        for="blogs"
+                        for="pagination"
                         :limit="3"
                         :async="true"
                         :show-step-links="true"
@@ -55,29 +63,33 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
     export default {
         data() {
             return {
-                posts: [],
-                paginate: ['blogs'],
+                paginate: ['pagination'],
                 statusMsg: '',
                 role: Role
             }
         },
         created() {  // get data from mongo
-            this.$http({url: '/api/blog', method: 'GET'})
-                .then(function (response) {
-                    this.posts = response.data;
-                }, function (error) {
-                    console.log(error.statusText);
-                });
+            this.$store.dispatch('blogs/initBlogs');
         },
+        computed: mapState([
+            'counting'
+        ]),
+        // computed: {
+        //     counting() {
+        //         return this.$store.blogs.state.counting + "";
+        //     }
+        // },
         methods: {
             deletePost(id) {
-                this.$http({url: '/api/blog/' + id, method: 'DELETE'})
+                let that = this;
+                this.$store.dispatch('blogs/deletePost', {'id': id})
                     .then(function () {
-                        this.showNotification('delete succeed')
-                        this.posts = this.posts.filter(p => p.id !== id)
+                        that.showNotification('delete succeed');
+                        that.$store.state.blogs.blogs = that.$store.state.blogs.blogs.filter(p => p.id !== id);
                     }, function (error) {
                         console.log(error.statusText);
                     });
@@ -87,6 +99,15 @@
                 setTimeout(() => {
                     this.statusMsg = '';
                 }, 3000);
+            },
+            increment() {
+                this.$store.dispatch('blogs/incrementAsync')
+            },
+            decrement() {
+                this.$store.commit('blogs/decrement');
+            },
+            incrementBy() {
+                this.$store.dispatch('blogs/incrementByAsync', {'num': 9});
             }
         }
     }
