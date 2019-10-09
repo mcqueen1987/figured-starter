@@ -8,15 +8,11 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuex from 'vuex'
-import Blog from './components/Blog.vue'
-import Post from './components/Post.vue'
-import Create from './components/Create.vue'
-import Update from './components/Update.vue'
 import VueResource from 'vue-resource'
 import VuePaginate from 'vue-paginate'
 import VueRouter from 'vue-router'
-import moduleBlog from './modules/Blogs'
-
+import store from './store'
+import router from './route'
 Vue.use(Vuex)
 Vue.use(VueResource); // enable 3rd party plugins VueResource
 Vue.use(VuePaginate);
@@ -39,36 +35,10 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// vue routing
-const routes = [
-    {path: '/', component: Blog},
-    {path: '/home', component: Blog},
-    {path: '/post/:id', component: Post},
-    {path: '/create', component: Create},
-    {path: '/update/:id', component: Update},
-];
-
-const router = new VueRouter({
-    mode: 'history',
-    routes
-})
-
-// vuex
-const store = new Vuex.Store({
-    modules: {
-        blogs: moduleBlog,
-    }
-})
-
-
 const app = new Vue({
     el: '#app',
     router,
-    store,
+    store
 });
-
-// console.log(" ========== ");
-// console.log(store.state.blogs.counting);
-// console.log(" ========== ");
 
 Vue.http.options.credentials = true;

@@ -5,24 +5,15 @@
             {{ statusMsg }}
         </div>
         <div class="row">
-            latestBlogsCount: {{ this.$store.getters['blogs/getBlogsCount'] }}
-            <hr>
-            latestBlogs: {{ this.$store.getters['blogs/getAllBlogs'] }}
-            <hr>
-            <div onclick="">
-                <button @click='decrement'>-</button>
-                counting : {{ this.$store.state.blogs.counting }}
-                <button @click='incrementBy'>+</button>
-            </div>
             <div class="col-sm-12">
-                <div class="row">
+                <div class="row" style="margin: 18px 0 0 0 ;">
                     <router-link v-if="role == 'admin'" :to="'/create'" class="btn btn-primary"> +
                         Create New Blog
                     </router-link>
                 </div>
                 <paginate
                         name="pagination"
-                        :list="this.$store.state.blogs.blogs"
+                        :list="this.$store.getters['blogs/getAllBlogs']"
                         :per="5"
                         tag="div"
                 >
@@ -63,7 +54,6 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex';
     export default {
         data() {
             return {
@@ -75,14 +65,6 @@
         created() {  // get data from mongo
             this.$store.dispatch('blogs/initBlogs');
         },
-        computed: mapState([
-            'counting'
-        ]),
-        // computed: {
-        //     counting() {
-        //         return this.$store.blogs.state.counting + "";
-        //     }
-        // },
         methods: {
             deletePost(id) {
                 let that = this;
@@ -99,15 +81,6 @@
                 setTimeout(() => {
                     this.statusMsg = '';
                 }, 3000);
-            },
-            increment() {
-                this.$store.dispatch('blogs/incrementAsync')
-            },
-            decrement() {
-                this.$store.commit('blogs/decrement');
-            },
-            incrementBy() {
-                this.$store.dispatch('blogs/incrementByAsync', {'num': 9});
             }
         }
     }

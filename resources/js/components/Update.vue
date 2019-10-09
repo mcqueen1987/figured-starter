@@ -46,7 +46,9 @@
         },
         methods: {
             getPost() {
-                let post = this.$store.state.blogs.blogs.filter(p => p.id === this.$route.params.id);
+                let post = this.$store.state.blogs.blogs.filter(
+                    p => p.id === this.$route.params.id
+                );
                 if (post[0]) {
                     this.title = post[0].title;
                     this.body = post[0].content;

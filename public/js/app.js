@@ -1700,6 +1700,39 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Blog_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Blog.vue */ "./resources/js/components/Blog.vue");
+/* harmony import */ var _Create_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue */ "./resources/js/components/Create.vue");
+/* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout.vue */ "./resources/js/components/Layout.vue");
+/* harmony import */ var _Post_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Post.vue */ "./resources/js/components/Post.vue");
+/* harmony import */ var _Update_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Update.vue */ "./resources/js/components/Update.vue");
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Blog: _Blog_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Create: _Create_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Layout: _Layout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Post: _Post_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Update: _Update_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Blog.vue?vue&type=script&lang=js& ***!
@@ -1709,7 +1742,6 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -1765,16 +1797,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1787,12 +1809,6 @@ __webpack_require__.r(__webpack_exports__);
     // get data from mongo
     this.$store.dispatch('blogs/initBlogs');
   },
-  computed: Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(['counting']),
-  // computed: {
-  //     counting() {
-  //         return this.$store.blogs.state.counting + "";
-  //     }
-  // },
   methods: {
     deletePost: function deletePost(id) {
       var that = this;
@@ -1814,17 +1830,6 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this.statusMsg = '';
       }, 3000);
-    },
-    increment: function increment() {
-      this.$store.dispatch('blogs/incrementAsync');
-    },
-    decrement: function decrement() {
-      this.$store.commit('blogs/decrement');
-    },
-    incrementBy: function incrementBy() {
-      this.$store.dispatch('blogs/incrementByAsync', {
-        'num': 9
-      });
     }
   }
 });
@@ -6594,19 +6599,9 @@ __webpack_require__.r(__webpack_exports__);
  * @license  MIT
  */
 
-// The _isBuffer check is for Safari 5-7 support, because it's missing
-// Object.prototype.constructor. Remove this eventually
-module.exports = function (obj) {
-  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
-}
-
-function isBuffer (obj) {
-  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
 
 
@@ -38161,6 +38156,30 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=template&id=332fccf4&":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App.vue?vue&type=template&id=332fccf4& ***!
+  \******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog.vue?vue&type=template&id=7c31058d&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Blog.vue?vue&type=template&id=7c31058d& ***!
@@ -38186,36 +38205,13 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _vm._v(
-        "\n        latestBlogsCount: " +
-          _vm._s(this.$store.getters["blogs/getBlogsCount"]) +
-          "\n        "
-      ),
-      _c("hr"),
-      _vm._v(
-        "\n        latestBlogs: " +
-          _vm._s(this.$store.getters["blogs/getAllBlogs"]) +
-          "\n        "
-      ),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { attrs: { onclick: "" } }, [
-        _c("button", { on: { click: _vm.decrement } }, [_vm._v("-")]),
-        _vm._v(
-          "\n            counting : " +
-            _vm._s(this.$store.state.blogs.counting) +
-            "\n            "
-        ),
-        _c("button", { on: { click: _vm.incrementBy } }, [_vm._v("+")])
-      ]),
-      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-sm-12" },
         [
           _c(
             "div",
-            { staticClass: "row" },
+            { staticClass: "row", staticStyle: { margin: "18px 0 0 0" } },
             [
               _vm.role == "admin"
                 ? _c(
@@ -38240,7 +38236,7 @@ var render = function() {
             {
               attrs: {
                 name: "pagination",
-                list: this.$store.state.blogs.blogs,
+                list: this.$store.getters["blogs/getAllBlogs"],
                 per: 5,
                 tag: "div"
               }
@@ -56948,6 +56944,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./components/App.vue": "./resources/js/components/App.vue",
 	"./components/Blog.vue": "./resources/js/components/Blog.vue",
 	"./components/Create.vue": "./resources/js/components/Create.vue",
 	"./components/Layout.vue": "./resources/js/components/Layout.vue",
@@ -57016,15 +57013,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _components_Blog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Blog.vue */ "./resources/js/components/Blog.vue");
-/* harmony import */ var _components_Post_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Post.vue */ "./resources/js/components/Post.vue");
-/* harmony import */ var _components_Create_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Create.vue */ "./resources/js/components/Create.vue");
-/* harmony import */ var _components_Update_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Update.vue */ "./resources/js/components/Update.vue");
-/* harmony import */ var vue_resource__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-resource.esm.js");
-/* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-paginate */ "./node_modules/vue-paginate/dist/vue-paginate.js");
-/* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_paginate__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _modules_Blogs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/Blogs */ "./resources/js/modules/Blogs.js");
+/* harmony import */ var vue_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-resource.esm.js");
+/* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-paginate */ "./node_modules/vue-paginate/dist/vue-paginate.js");
+/* harmony import */ var vue_paginate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_paginate__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./route */ "./resources/js/route.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -57039,14 +57033,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-
-
-
 Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
-Vue.use(vue_resource__WEBPACK_IMPORTED_MODULE_5__["default"]); // enable 3rd party plugins VueResource
+Vue.use(vue_resource__WEBPACK_IMPORTED_MODULE_1__["default"]); // enable 3rd party plugins VueResource
 
-Vue.use(vue_paginate__WEBPACK_IMPORTED_MODULE_6___default.a);
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]);
+Vue.use(vue_paginate__WEBPACK_IMPORTED_MODULE_2___default.a);
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -57065,42 +57056,12 @@ files.keys().map(function (key) {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-// vue routing
 
-var routes = [{
-  path: '/',
-  component: _components_Blog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-}, {
-  path: '/home',
-  component: _components_Blog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-}, {
-  path: '/post/:id',
-  component: _components_Post_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-}, {
-  path: '/create',
-  component: _components_Create_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
-}, {
-  path: '/update/:id',
-  component: _components_Update_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
-}];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]({
-  mode: 'history',
-  routes: routes
-}); // vuex
-
-var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
-  modules: {
-    blogs: _modules_Blogs__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }
-});
 var app = new Vue({
   el: '#app',
-  router: router,
-  store: store
-}); // console.log(" ========== ");
-// console.log(store.state.blogs.counting);
-// console.log(" ========== ");
-
+  router: _route__WEBPACK_IMPORTED_MODULE_5__["default"],
+  store: _store__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
 Vue.http.options.credentials = true;
 
 /***/ }),
@@ -57160,6 +57121,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/App.vue":
+/*!*****************************************!*\
+  !*** ./resources/js/components/App.vue ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=332fccf4& */ "./resources/js/components/App.vue?vue&type=template&id=332fccf4&");
+/* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js& */ "./resources/js/components/App.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/App.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/App.vue?vue&type=script&lang=js&":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/App.vue?vue&type=script&lang=js& ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/App.vue?vue&type=template&id=332fccf4&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/App.vue?vue&type=template&id=332fccf4& ***!
+  \************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=template&id=332fccf4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=template&id=332fccf4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -57492,18 +57522,87 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/modules/Blogs.js":
-/*!***************************************!*\
-  !*** ./resources/js/modules/Blogs.js ***!
-  \***************************************/
+/***/ "./resources/js/route.js":
+/*!*******************************!*\
+  !*** ./resources/js/route.js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+
+
+var routes = [{
+  path: '/',
+  component: _components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"].components.Blog
+}, {
+  path: '/home',
+  component: _components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"].components.Blog
+}, {
+  path: '/post/:id',
+  component: _components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"].components.Post
+}, {
+  path: '/create',
+  component: _components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"].components.Create
+}, {
+  path: '/update/:id',
+  component: _components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"].components.Update
+}];
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  mode: 'history',
+  routes: routes
+});
+/* harmony default export */ __webpack_exports__["default"] = (router);
+
+/***/ }),
+
+/***/ "./resources/js/store/index.js":
+/*!*************************************!*\
+  !*** ./resources/js/store/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_Blogs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Blogs */ "./resources/js/store/modules/Blogs.js");
+/* harmony import */ var _plugins_Plugins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins/Plugins */ "./resources/js/store/plugins/Plugins.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_3__["default"]);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
+  modules: {
+    blogs: _modules_Blogs__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  plugins: _plugins_Plugins__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (store);
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/Blogs.js":
+/*!*********************************************!*\
+  !*** ./resources/js/store/modules/Blogs.js ***!
+  \*********************************************/
+/*! exports provided: mutations, getters, actions, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _api_blogs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/blogs */ "./resources/js/api/blogs.js");
+/* harmony import */ var _api_blogs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/blogs */ "./resources/js/api/blogs.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -57518,250 +57617,241 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
- // store blogs
 
+var mutations = {
+  updateBlogs: function updateBlogs(state, newBlogs) {
+    state.blogs = _toConsumableArray(newBlogs);
+  },
+  updatePost: function updatePost(state, post) {
+    state.blogs = state.blogs.filter(function (p) {
+      if (p.id === post.id) {
+        p.title = post.title;
+        p.content = post.content;
+      }
+
+      return p;
+    });
+  },
+  insertPost: function insertPost(state, newPost) {
+    state.blogs = Object.assign({}, _toConsumableArray(state.blogs), newPost);
+  }
+};
+var getters = {
+  getAllBlogs: function getAllBlogs(state) {
+    return state.blogs;
+  },
+  getBlogsCount: function getBlogsCount(state, getters) {
+    return getters.getAllBlogs.length;
+  },
+  getBlogById: function getBlogById(state) {
+    return function (id) {
+      return state.blogs.filter(function (blog) {
+        return blog.id === id;
+      });
+    };
+  }
+};
+var actions = {
+  initBlogs: function () {
+    var _initBlogs = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+      var commit, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].getAllBlogs();
+
+            case 4:
+              response = _context.sent;
+              _context.next = 7;
+              return commit('updateBlogs', response.data);
+
+            case 7:
+              _context.next = 12;
+              break;
+
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 9]]);
+    }));
+
+    function initBlogs(_x) {
+      return _initBlogs.apply(this, arguments);
+    }
+
+    return initBlogs;
+  }(),
+  deletePost: function () {
+    var _deletePost = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref2, payload) {
+      var commit;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              commit = _ref2.commit;
+              _context2.prev = 1;
+              _context2.next = 4;
+              return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].deletePost(payload.id);
+
+            case 4:
+              state.blogs = state.blogs.filter(function (p) {
+                return p.id !== payload.id;
+              });
+              _context2.next = 10;
+              break;
+
+            case 7:
+              _context2.prev = 7;
+              _context2.t0 = _context2["catch"](1);
+              console.log(_context2.t0);
+
+            case 10:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 7]]);
+    }));
+
+    function deletePost(_x2, _x3) {
+      return _deletePost.apply(this, arguments);
+    }
+
+    return deletePost;
+  }(),
+  newPost: function () {
+    var _newPost = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(_ref3, payload) {
+      var commit, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit;
+              _context3.prev = 1;
+              _context3.next = 4;
+              return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].createPost(payload.data);
+
+            case 4:
+              response = _context3.sent;
+              _context3.next = 7;
+              return commit('insertPost', response.data);
+
+            case 7:
+              _context3.next = 12;
+              break;
+
+            case 9:
+              _context3.prev = 9;
+              _context3.t0 = _context3["catch"](1);
+              console.log(_context3.t0);
+
+            case 12:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 9]]);
+    }));
+
+    function newPost(_x4, _x5) {
+      return _newPost.apply(this, arguments);
+    }
+
+    return newPost;
+  }(),
+  updatePost: function () {
+    var _updatePost = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(_ref4, payload) {
+      var commit, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              commit = _ref4.commit;
+              _context4.prev = 1;
+              _context4.next = 4;
+              return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].updatePost(payload.data);
+
+            case 4:
+              response = _context4.sent;
+              _context4.next = 7;
+              return commit('updatePost', response.data);
+
+            case 7:
+              _context4.next = 13;
+              break;
+
+            case 9:
+              _context4.prev = 9;
+              _context4.t0 = _context4["catch"](1);
+              console.log(_context4.t0);
+              return _context4.abrupt("return", _context4.t0);
+
+            case 13:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 9]]);
+    }));
+
+    function updatePost(_x6, _x7) {
+      return _updatePost.apply(this, arguments);
+    }
+
+    return updatePost;
+  }()
+};
 var moduleBlog = {
   namespaced: true,
   state: {
     blogs: [],
     counting: 0
   },
-  // mutations are synchronise, not wait, but actions are asynchronous
-  mutations: {
-    // interface for state operations
-    updateBlogs: function updateBlogs(state, newBlogs) {
-      console.log("new blogs initiated: " + JSON.stringify(newBlogs));
-      state.blogs = _toConsumableArray(newBlogs);
-    },
-    updatePost: function updatePost(state, post) {
-      console.log("update post data: " + JSON.stringify(post));
-      state.blogs = state.blogs.filter(function (p) {
-        if (p.id === post.id) {
-          p.title = post.title;
-          p.content = post.content;
-        }
-
-        return p;
-      });
-    },
-    insertPost: function insertPost(state, newPost) {
-      console.log("new post inserted: " + JSON.stringify(newPost));
-      state.blogs = Object.assign({}, _toConsumableArray(state.blogs), newPost);
-    },
-    increment: function increment(state) {
-      state.counting++;
-    },
-    decrement: function decrement(state) {
-      state.counting--;
-    },
-    incrementBy: function incrementBy(state, payload) {
-      state.counting += payload.num;
-    }
-  },
-  getters: {
-    getAllBlogs: function getAllBlogs(state) {
-      return state.blogs;
-    },
-    getBlogsCount: function getBlogsCount(state, getters) {
-      return getters.getAllBlogs.length;
-    },
-    getBlogById: function getBlogById(state) {
-      return function (id) {
-        return state.blogs.filter(function (blog) {
-          return blog.id === id;
-        });
-      };
-    }
-  },
-  actions: {
-    // increment (context) { // context is obj of store ??  can call getter and state
-    increment: function increment(_ref) {
-      var commit = _ref.commit;
-      // commit from context
-      commit('increment');
-    },
-    incrementAsync: function incrementAsync(_ref2) {
-      var commit = _ref2.commit;
-      setTimeout(function () {
-        commit("increment");
-      }, 1000);
-    },
-    incrementByAsync: function incrementByAsync(_ref3, payload) {
-      var commit = _ref3.commit;
-      setTimeout(function () {
-        commit("incrementBy", payload);
-      }, 1000);
-    },
-    initBlogs: function () {
-      var _initBlogs = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref4) {
-        var commit, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                commit = _ref4.commit;
-                _context.prev = 1;
-                _context.next = 4;
-                return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].getAllBlogs();
-
-              case 4:
-                response = _context.sent;
-                _context.next = 7;
-                return commit('updateBlogs', response.data);
-
-              case 7:
-                _context.next = 12;
-                break;
-
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](1);
-                console.log(_context.t0);
-
-              case 12:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[1, 9]]);
-      }));
-
-      function initBlogs(_x) {
-        return _initBlogs.apply(this, arguments);
-      }
-
-      return initBlogs;
-    }(),
-    deletePost: function () {
-      var _deletePost = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref5, payload) {
-        var commit;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                commit = _ref5.commit;
-                _context2.prev = 1;
-                _context2.next = 4;
-                return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].deletePost(payload.id);
-
-              case 4:
-                state.blogs = state.blogs.filter(function (p) {
-                  return p.id !== payload.id;
-                });
-                _context2.next = 10;
-                break;
-
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](1);
-                console.log(_context2.t0);
-
-              case 10:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, null, [[1, 7]]);
-      }));
-
-      function deletePost(_x2, _x3) {
-        return _deletePost.apply(this, arguments);
-      }
-
-      return deletePost;
-    }(),
-    newPost: function () {
-      var _newPost = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(_ref6, payload) {
-        var commit, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                commit = _ref6.commit;
-                _context3.prev = 1;
-                _context3.next = 4;
-                return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].createPost(payload.data);
-
-              case 4:
-                response = _context3.sent;
-                _context3.next = 7;
-                return commit('insertPost', response.data);
-
-              case 7:
-                _context3.next = 12;
-                break;
-
-              case 9:
-                _context3.prev = 9;
-                _context3.t0 = _context3["catch"](1);
-                console.log(_context3.t0);
-
-              case 12:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, null, [[1, 9]]);
-      }));
-
-      function newPost(_x4, _x5) {
-        return _newPost.apply(this, arguments);
-      }
-
-      return newPost;
-    }(),
-    updatePost: function () {
-      var _updatePost = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(_ref7, payload) {
-        var commit, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                commit = _ref7.commit;
-                _context4.prev = 1;
-                _context4.next = 4;
-                return _api_blogs__WEBPACK_IMPORTED_MODULE_1__["default"].updatePost(payload.data);
-
-              case 4:
-                response = _context4.sent;
-                _context4.next = 7;
-                return commit('updatePost', response.data);
-
-              case 7:
-                _context4.next = 13;
-                break;
-
-              case 9:
-                _context4.prev = 9;
-                _context4.t0 = _context4["catch"](1);
-                console.log(_context4.t0);
-                return _context4.abrupt("return", _context4.t0);
-
-              case 13:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, null, [[1, 9]]);
-      }));
-
-      function updatePost(_x6, _x7) {
-        return _updatePost.apply(this, arguments);
-      }
-
-      return updatePost;
-    }()
-  }
+  actions: actions,
+  getters: getters,
+  mutations: mutations
 };
 /* harmony default export */ __webpack_exports__["default"] = (moduleBlog);
+
+/***/ }),
+
+/***/ "./resources/js/store/plugins/Plugins.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/plugins/Plugins.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// test code
+var localStoragePlugin = function localStoragePlugin(store) {
+  store.subscribe(function (mutation, _ref) {
+    var blogs = _ref.blogs;
+    window.localStorage.setItem(mutation, JSON.stringify(blogs));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ([localStoragePlugin]);
 
 /***/ }),
 
